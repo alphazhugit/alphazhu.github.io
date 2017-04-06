@@ -1,11 +1,11 @@
 # Site settings
-title: Candycat Blog
-SEOTitle: Candycat的博客 | Candycat Blog
+title: Alpha Blog
+SEOTitle: Alphazhu的博客 | Alphazhu Blog
 header-img: img/home-bg.jpg
-email: lelefeng1992@gmail.com
-description: "喜欢和好奇用计算机产生的一切画面"
-keyword: ""
-url: "candycat1992.github.io"              # your host, for absolute URL
+email: alphazhu@hotmail.com
+description: "不按套路出牌的极端分子￣ヘ￣"
+keyword: "unity3d, unity3dshader, shader, 技术美工, TA, alphazhu, Alpha"
+url: "alphazhugit.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 timezone: CN
 
@@ -15,11 +15,11 @@ gems: [jekyll-paginate]
 # SNS settings
 RSS: false
 
-zhihu_username:     lele-feng-15
-github_username:    candycat1992
-douban_username:    69635011
+#zhihu_username:     alphazhugit
+github_username:    alphazhugit
+#douban_username:    69635011
 #weibo_username:     2776591135
-twitter_username:  candycat1992
+#twitter_username:  candycat1992
 #facebook_username:  huxpro
 
 
@@ -47,16 +47,16 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: candycat
+#duoshuo_username: candycat
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
 
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 207a182a0a79e8a76bfd02381045166f
+#ba_track_id: 207a182a0a79e8a76bfd02381045166f
 # Google Analytics
 #ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 #ga_domain: auto
@@ -65,8 +65,8 @@ ba_track_id: 207a182a0a79e8a76bfd02381045166f
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "一只喜欢计算机图形的程序媛，爱好写shader、写博客，喜欢用计算机来绘制各种五彩缤纷的画面。"
-sidebar-avatar: /img/avatar-girl.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "一个不按套路出牌的极端分子￣ヘ￣,记录一些工作与生活。"
+sidebar-avatar: /img/avatar-boy.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
