@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "《野蛮人罗纳尔 Ronal Barbaren》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Film
+---
+
 ![ymr_fm.jpg](http://imgchr.com/images/ymr_fm.jpg)
 ![ymr1.jpg](http://imgchr.com/images/ymr1.jpg)
 ![ymr2.jpg](http://imgchr.com/images/ymr2.jpg)

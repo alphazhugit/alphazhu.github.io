@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "《情书 Love Letter》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Film
+---
+
 ![qs_fm.jpg](http://imgchr.com/images/qs_fm.jpg)
 ![qs1.jpg](http://imgchr.com/images/qs1.jpg)
 ![qs2.jpg](http://imgchr.com/images/qs2.jpg)

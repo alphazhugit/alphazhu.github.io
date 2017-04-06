@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d Shader剔除图片白色部分"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader
+---
+
 ![tichubaise.png](http://imgchr.com/images/tichubaise.png)
 
     Shader "ZX_AlphaWhite" {

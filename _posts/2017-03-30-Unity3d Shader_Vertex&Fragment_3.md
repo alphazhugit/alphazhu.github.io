@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d Shader_Vertex&Fragment_3"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader
+---
+
 * 此篇主要讲CG里的**自定义函数**以及**cginc**的自定义
 
 ---

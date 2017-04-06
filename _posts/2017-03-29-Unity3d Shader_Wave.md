@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d Shader_Wave"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader
+---
+
 
 ![274da8955bc7d4ab.gif](http://storage1.imgchr.com/images/274da8955bc7d4ab.gif)
 

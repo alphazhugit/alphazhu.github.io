@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "《California Dreamin》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Music
+---
+
 
 All the leaves are brown (all the leaves are brown)
 And the sky is grey (and the sky is grey)

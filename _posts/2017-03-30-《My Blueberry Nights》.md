@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "《My Blueberry Nights》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Film
+---
+
 ![](http://7xpkml.com1.z0.glb.clouddn.com/lmzy.jpg)
 
 

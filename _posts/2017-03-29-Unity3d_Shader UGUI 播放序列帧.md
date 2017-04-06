@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d_Shader UGUI 播放序列帧"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader
+---
+
 ![ScreenGif91715.gif](http://storage1.imgchr.com/images/ScreenGif91715.gif)
 ```
 //感谢Dr.Dog提供序列算法//

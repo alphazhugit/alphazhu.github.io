@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d Shader - 圆角"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader
+---
+
 >**效果图**
 
 ![yuanjiao.png](http://storage1.imgchr.com/images/yuanjiao.png)

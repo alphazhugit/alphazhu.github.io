@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d C#射线Ray"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3d技术
+---
+
 ```
 public class Raytest : MonoBehaviour {
 	private Vector3 direction = new Vector3(1,0,0);//前进及射线方向//

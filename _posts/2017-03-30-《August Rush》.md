@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "《August Rush》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Film
+---
+
 ![smqy_fm.jpg](http://imgchr.com/images/smqy_fm.jpg)
 ![smqy1.jpg](http://imgchr.com/images/smqy1.jpg)
 ![smqy2.jpg](http://imgchr.com/images/smqy2.jpg)

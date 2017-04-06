@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d_Light Probe使用方法"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3d技术
+---
+
 **运行环境：Unity5.4.0f3**
 
 

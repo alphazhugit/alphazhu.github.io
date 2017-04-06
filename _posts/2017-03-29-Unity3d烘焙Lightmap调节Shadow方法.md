@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d烘焙Lightmap调节Shadow方法"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3d技术
+---
+
 > 众所周知在Unity3d中调节Shadow的方法就是在灯光的属性参数下面调节
 
 ![shdow1.png](http://storage1.imgchr.com/images/shdow1.png)

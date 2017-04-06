@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d_Vertex&Fragment_BaseShadow"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader
+---
+
 ```
 Shader "ZX/BaseVertFragmentShadow"
 {

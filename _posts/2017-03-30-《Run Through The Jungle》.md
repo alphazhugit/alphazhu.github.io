@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "《Run Through The Jungle》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Music
+---
+
 Whoa thought it was a nightmare
 Lord it was so true
 

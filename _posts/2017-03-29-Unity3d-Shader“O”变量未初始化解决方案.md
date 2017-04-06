@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Unity3d-Shader“O”变量未初始化解决方案"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3d技术
+---
+
 == variable 'o' used without having been completely initialized Compiling Vertex program ==
 Unity3d项目从4.6升级到5.0之后 部分shader会报告以上的错误，解决方案就是添加一个初始化的语句
 

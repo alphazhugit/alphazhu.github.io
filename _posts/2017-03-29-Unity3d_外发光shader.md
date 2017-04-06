@@ -1,3 +1,12 @@
+---
+layout:     post
+title:      "Unity3d_外发光shader"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3dShader---
+
 ![9024faf7953d2d5f.png](http://storage1.imgchr.com/images/9024faf7953d2d5f.png)
 
 ```

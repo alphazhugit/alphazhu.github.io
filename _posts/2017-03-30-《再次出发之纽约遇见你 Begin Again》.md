@@ -1,4 +1,12 @@
-[![ny_fm.jpg](http://imgchr.com/images/ny_fm.jpg)](http://imgchr.com/image/0je)
+---
+layout:     post
+title:      "《再次出发之纽约遇见你 Begin Again》"
+date:       2016-03-02 12:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Film
+---
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="http://music.163.com/outchain/player?type=0&id=85522712&auto=1&height=430"></iframe>
 
