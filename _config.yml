@@ -13,7 +13,7 @@ gems: [jekyll-paginate]
 
 
 # SNS settings
-RSS: true
+RSS: false
 
 #zhihu_username:     alphazhugit
 github_username:    alphazhugit
