@@ -66,7 +66,7 @@ kramdown:
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "    一个不按套路出牌的极端分子￣ヘ￣,记录一些工作与生活。"
+sidebar-about-description: "不按套路出牌的极端分子￣ヘ￣,记录一些工作与生活。"
 sidebar-avatar: /img/avatar-boy.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
