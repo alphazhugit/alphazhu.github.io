@@ -12,7 +12,7 @@ tags:
 
 说白了就是把想要产生投影的模型复制一份，进行压扁，有骨骼动画的模型进行保留，下面看一下实际的效果，据**程序_Sea**所说，**王者农药**这款游戏上的实时投影也是采用这种方式进行制作的。
 
-![](http://p3.7k7kimg.cn/m/201701/0709/1483753867158912.jpg)
+![](http://storage1.imgchr.com/iMoqg.jpg)
 
 可以看到图中哪吒这个英雄下面的投影，同时还做了周围虚化的处理。
 
@@ -31,11 +31,11 @@ tags:
 
 后来我用这种方式的影子跟实时投影进行了一下对比：
 
-![](http://storage1.imgchr.com/iM5M8.png)
+![](http://storage1.imgchr.com/iM5M8.md.png)
 
 这张是在**实时**投影下的一些参数
 
-![](http://storage1.imgchr.com/iMIsS.png)
+![](http://storage1.imgchr.com/iMIsS.md.png)
 
 这个是在**Planar Shadow**下的参数
 
