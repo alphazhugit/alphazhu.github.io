@@ -5,7 +5,7 @@ date:       2017-04-18 15:54:00
 author:     "Alpha"
 header-img: "img/in-post/default-bg.jpg"
 tags:
-    - Unity3d技术
+    - Unity3dShader
 ---
 
 因为一直没有接触过游戏具体的行业，所以对于游戏行业内部的很多东西是不了解的，比如实时投影的问题一直困扰很多开发者，这边要感谢QQ上的**程序_Sea**提供的解决方案。
