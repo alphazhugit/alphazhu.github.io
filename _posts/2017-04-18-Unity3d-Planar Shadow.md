@@ -43,7 +43,7 @@ tags:
 
 那么代码如下
 
-```
+```c#:
 Shader "Unlit/PlanarShadow"
 {
 	Properties
