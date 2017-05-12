@@ -1,0 +1,181 @@
+```
+
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "Cg normal mapping" {
+   Properties {
+      _BumpMap ("Normal Map", 2D) = "bump" {}
+      _MainTex ("MainTex", 2D) = "bump" {}
+      _Color ("Diffuse Material Color", Color) = (1,1,1,1) 
+      _SpecColor ("Specular Material Color", Color) = (1,1,1,1) 
+//      _Shininess ("Shininess", Float) = 10
+
+      [Space(30)]
+
+		[Toggle] _Spe ("Specular On?", Float) = 0
+		[Toggle] _Nor ("Normal On?", Float) = 0
+		[Toggle] _NorSpe ("NormalSpe On?", Float) = 0
+
+
+   }
+
+   CGINCLUDE // common code for all passes of all subshaders
+
+      #include "UnityCG.cginc"
+//      uniform float4 _LightColor0; 
+      // color of light source (from "Lighting.cginc")
+
+      // User-specified properties
+      uniform sampler2D _BumpMap;
+      uniform sampler2D _MainTex;   
+//      uniform float4 _BumpMap_ST;
+      uniform float4 _Color; 
+      uniform float4 _SpecColor; 
+//      uniform float _Shininess;
+
+      struct vertexInput {
+         float4 vertex : POSITION;
+         float4 texcoord : TEXCOORD0;
+         float3 normal : NORMAL;
+         float4 tangent : TANGENT;
+      };
+      struct vertexOutput {
+         float4 pos : SV_POSITION;
+         float4 posWorld : TEXCOORD0;
+         // position of the vertex (and fragment) in world space 
+         float4 tex : TEXCOORD1;
+         float3 tangentWorld : TEXCOORD2;  
+         float3 normalWorld : TEXCOORD3;
+         float3 binormalWorld : TEXCOORD4;
+      };
+
+      vertexOutput vert(vertexInput input) 
+      {
+         vertexOutput output;
+         UNITY_INITIALIZE_OUTPUT(vertexOutput, output);
+
+         float4x4 modelMatrix = unity_ObjectToWorld;
+         float4x4 modelMatrixInverse = unity_WorldToObject; 
+
+         output.tangentWorld = normalize(
+            mul(modelMatrix, float4(input.tangent.xyz, 0.0)).xyz);
+         output.normalWorld = normalize(
+            mul(float4(input.normal, 0.0), modelMatrixInverse).xyz);
+         output.binormalWorld = normalize(
+            cross(output.normalWorld, output.tangentWorld) 
+            * input.tangent.w); // tangent.w is specific to Unity
+
+         output.posWorld = mul(modelMatrix, input.vertex);
+         output.tex = input.texcoord;
+         output.pos = mul(UNITY_MATRIX_MVP, input.vertex);
+         return output;
+      }
+
+      // fragment shader with ambient lighting
+
+      float4 fragWithAmbient(vertexOutput input) : COLOR
+      {
+         // in principle we have to normalize tangentWorld,
+         // binormalWorld, and normalWorld again; however, the 
+         // potential problems are small since we use this 
+         // matrix only to compute "normalDirection", 
+         // which we normalize anyways
+
+         half4 encodedCY = tex2D(_BumpMap,input.tex.xy);
+
+         half4 cc = tex2D(_MainTex, input.tex.xy) * _Color;
+//         half3 localCoords = float3(2 * encodedCY.a - 1,2 * encodedCY.g - 1, 0);
+//         localCoords.z = sqrt(1 - dot(localCoords, localCoords));
+         // approximation without sqrt:  localCoords.z = 
+         // 1.0 - 0.5 * dot(localCoords, localCoords);
+
+         float3x3 local2WorldTranspose = float3x3(
+            input.tangentWorld, 
+            input.binormalWorld, 
+            input.normalWorld);
+//         fixed3 normalDirection =  normalize(mul(localCoords, local2WorldTranspose));
+
+         fixed3 normalDirection =  normalize(encodedCY.xyw * 2 -1);
+
+         fixed3 viewDirection = normalize( _WorldSpaceCameraPos - input.posWorld.xyz);
+         fixed3 lightDirection;
+//         float attenuation;
+
+         //if (0.0 == _WorldSpaceLightPos0.w) // directional light?
+         //{ 
+            lightDirection = normalize(_WorldSpaceLightPos0.xyz);
+         //}
+//		 /*
+//         else // point or spot light
+//         {
+//            float3 vertexToLightSource = 
+//               _WorldSpaceLightPos0.xyz - input.posWorld.xyz;
+//            float distance = length(vertexToLightSource);
+////            attenuation = 1.0 / distance; // linear attenuation 
+//            lightDirection = normalize(vertexToLightSource);
+//         }
+//		 */
+
+         //float3 ambientLighting =  UNITY_LIGHTMODEL_AMBIENT.rgb * _Color.rgb;
+
+//         float3 diffuseReflection = max(0.0, dot(normalDirection, lightDirection));
+         float3 diffuseReflection = max(0,dot(normalDirection, lightDirection));
+
+         float3 specularReflection;
+         //if (dot(normalDirection, lightDirection) < 0.0) 
+            // light source on the wrong side?
+         //{
+            //specularReflection = float3(0.0, 0.0, 0.0); 
+            // no specular reflection
+         //}
+	    // else // light source on the right side
+         //{
+//            specularReflection = _LightColor0.rgb * _SpecColor.rgb * pow(max(0.0, dot( reflect(-lightDirection, normalDirection), viewDirection)), _Shininess);
+            specularReflection = encodedCY.z * _SpecColor.rgb * pow(max(0, dot( reflect(-lightDirection, normalDirection), viewDirection)), _SpecColor.a*66.66);
+//            specularReflection =  _SpecColor.rgb * pow(max(0, dot( reflect(-lightDirection, normalDirection), viewDirection)), _SpecColor.a*66.66);
+         //}
+
+
+         float4 finalColor;
+         finalColor = cc;
+
+         	#if _NOR_ON
+
+         		finalColor = float4(diffuseReflection * cc.rgb, 1);
+         	#endif
+
+         	#if _SPE_ON
+				finalColor = float4(cc.rgb + specularReflection, 1);
+			#endif
+
+			#if _NORSPE_ON
+				finalColor = float4(diffuseReflection * cc.rgb + specularReflection, 1);
+			#endif
+
+			return finalColor;
+      }
+
+
+   ENDCG
+
+
+   SubShader {
+
+      Pass {      
+         Tags { "LightMode" = "ForwardBase" } 
+            // pass for ambient light and first light source
+ 
+         CGPROGRAM
+            #pragma vertex vert  
+            #pragma fragment fragWithAmbient  
+            #pragma shader_feature _NORSPE_ON
+            #pragma shader_feature _NOR_ON
+            #pragma shader_feature _SPE_ON
+            // the functions are defined in the CGINCLUDE part
+         ENDCG
+      }
+   }
+}
+
+```
