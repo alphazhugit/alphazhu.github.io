@@ -1,7 +1,12 @@
-
-
-
-
+---
+layout:     post
+title:      "[转]Unity的Shader如何控制投影颜色"
+date:       2017-06-27 19:00:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3d技术
+---
 
 细节慢慢补充，有几个需要注意的地方，必须要有接收投影的pass也就是Name是ShadowCollector的，必须添加#pragma multi_compile_fwdbase，物体的着色器必须有Tag 里面的 {"LightMode" = "ForwardBase"}。处理投影要在接收投影的物体shader里。
 
@@ -102,3 +107,5 @@ Shader "Example/ShadowColor"
 }
 
 ```
+
+[原文链接](http://www.cnblogs.com/sitt/p/4699369.html)
