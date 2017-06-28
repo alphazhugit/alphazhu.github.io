@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Shader支持Fog方法"
+title:      "unity3d_Shader支持Fog方法"
 date:       2016-03-02 12:00:00
 author:     "Alpha"
 header-img: "img/in-post/default-bg.jpg"
