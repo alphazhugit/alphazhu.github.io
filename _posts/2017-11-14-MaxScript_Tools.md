@@ -18,3 +18,5 @@ tags:
 * 2017-09-19 15：16 完成烘焙相机的Fov值为Scale的X值工具
 * 2017-09-29 11：10 更新烘焙相机的Fov值为Scale的X值工具，还是使用Dummy代理数据，主要做了旋转值得转换算法
 * 2017-10-20 11：23 完成多相机切换预览工具
+
+[**Git地址**](https://github.com/alphazhugit/MaxScript/tree/master)
