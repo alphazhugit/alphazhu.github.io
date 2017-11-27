@@ -37,12 +37,12 @@ if(aaa.a != _Alpharef)
 ```
 float4 aaa = tex2D(_MainTex,i.uv);
 
-				// float4 dhsk = saturate(aaa * _Alpharef);
-				clip(saturate(aaa * _Alpharef).w - _Alpharef);
+// float4 dhsk = saturate(aaa * _Alpharef);
+clip(saturate(aaa * _Alpharef).w - _Alpharef);
 				
-				--------------------------------------------------------------------
-				u_xlat10_0 = texture(_MainTex, vs_TEXCOORD0.xy).w;
-    u_xlat0 = u_xlat10_0 * _Alpharef;
+--------------------------------------------------------------------
+u_xlat10_0 = texture(_MainTex, vs_TEXCOORD0.xy).w;
+u_xlat0 = u_xlat10_0 * _Alpharef;
 #ifdef UNITY_ADRENO_ES3
     u_xlat0 = min(max(u_xlat0, 0.0), 1.0);
 #else
