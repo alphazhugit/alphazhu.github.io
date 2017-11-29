@@ -1,6 +1,6 @@
 ---
 title: GLSL2UnityShader
-tags: 新建,模板,小书匠
+tags: Unity3dShader
 grammar_cjkRuby: true
 ---
 
