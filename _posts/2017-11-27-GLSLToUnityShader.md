@@ -57,3 +57,21 @@ u_xlat0 = u_xlat10_0 * _Alpharef;
     if((int(u_xlatb0) * int(0xffffffffu))!=0){discard;}
 
 ```
+
+```
+ u_xlat16_0 = dot(gl_FragCoord.xyz, gl_FragCoord.xyz);
+    u_xlat16_1 = max(u_xlat16_0, 0.00100000005);
+    u_xlat16_0 = inversesqrt(u_xlat16_1);
+    SV_Target0.xyz = vec3(u_xlat16_0) * gl_FragCoord.xyz;
+    SV_Target0.w = 1.0;
+	
+----------------------------------------------------
+
+inline half3 Unity_SafeNormalize(half3 inVec)
+{
+    half dp3 = max(0.001f, dot(inVec, inVec));
+    return inVec * rsqrt(dp3);
+}
+float3 nor = Unity_SafeNormalize(i.vertex.xyz);
+
+```
