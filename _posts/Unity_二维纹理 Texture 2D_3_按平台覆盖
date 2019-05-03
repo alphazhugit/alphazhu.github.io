@@ -1,0 +1,67 @@
+---
+layout:     post
+title:      "Unity_二维纹理 Texture 2D_3_按平台覆盖"
+date:       2019-05-03 20:30:00
+author:     "Alpha"
+header-img: "img/in-post/default-bg.jpg"
+tags:
+    - Unity3d技术
+---
+
+当你在不同的平台构建（游戏），你必须考虑为目标平台决定你的纹理，尺寸和质量。使用Unity3，你可以覆盖这些选项，并根据你要部署的平台指定具体的值。注意，当你构建项目时，如果你没有选择任何值覆盖，编辑器会选择默认值。
+
+Unity_二维纹理 Texture 2D_3_按平台覆盖
+
+Default settings for all platforms. 所有平台的默认设置
+
+
+
+Max Texture Size 最大纹理尺寸：导入纹理的最大尺寸。美工师往往更愿意使用巨大的纹理——用这个调整纹理降到合适的大小。
+Texture Format 纹理格式：用于纹理的内部表示。这是一个大小和质量之间的权衡。在下面的例子中我们展示了一个256 x 256像素的纹理的最终尺寸：
+    Compressed 压缩：压缩RGB纹理，这是最常见的漫反射纹理格式。每像素4位（256x256的纹理大小为32 KB）。（4位就只有16种颜色）
+    16 bit：低质量的真彩色。拥有16个级别的红、绿、蓝和alpha。
+    Truecolor 真彩色：真彩色，这是最高的质量。256x256的纹理大小为256 KB。（32位色彩）
+如果你已设置了纹理类型为高级，则纹理格式会有不同的值。
+Desktop
+Texture Format纹理格式：用于纹理的内部格式。在大小和质量之间权衡。在下列的例子中，我们使用了在游戏中纹理的最终大小为256x256像素。
+    RGB Compressed DXT1：压缩的RGB纹理。这是最常见的漫反射纹理格式。4位/像素（32 KB 256x256）
+    RGBA Compressed DXT5：压缩的RGBA纹理。这是漫反射和高光控制纹理的主要格式。1 字节/像素（64 KB 256x256）
+    RGB 16 bit：65万颜色不带alpha。压缩的DXT格式使用较少的内存，通常会更好看。（128 KB 256x256）
+    RGB 24 bit：真彩色不带alpha。（192 KB 256x256）
+    Alpha 8 bit：高质量alpha通道，不带颜色。（64 KB 256x256）
+    RGBA 16 bit：低质量真彩色。有16级红，绿，蓝和alpha。压缩的DXT5格式使用较少的内存，通常会更好看。（128 KB 256x256）
+    RGBA 32 bit:高质量真彩色带alpha（256 KB 256x256），这个文件很大。大多数情况下，DXT5提供足够的质量，文件大小要小得多。这个主要用于法线贴图，DXT压缩往往带有一个可见的质量损失。
+iOS
+Texture Format:用于纹理的内部格式。在大小和质量之间权衡。在下列的例子中，我们使用了在游戏中纹理的最终大小为256x256像素。
+    RGB Compressed:PVRTC 4位，压缩的RGB纹理。这是最常见的漫反射纹理格式。4位/像素（32 KB 256x256）
+    RGBA Compressed PVRTC 4 bits:压缩的RGBA纹理。这是漫反射和高光控制纹理的主要格式。4 位/像素（32 KB 256x256）
+    RGB Compressed PVRTC 2 bits:压缩的RGB纹理。 低质量格式，适用于漫反射纹理。2 位/像素（16 KB 256x256）
+    RGBA Compressed PVRTC 2 bits:压缩的RGBA纹理。 低质量格式，适用于漫反射纹理和高光控制纹理。2 位/像素（16 KB 256x256）
+    RGB Compressed DXT1:压缩的RGB纹理。 在iOS不支持此格式，但为桌面项目保持向后兼容性。
+    RGBA Compressed DXT5:压缩的RGBA纹理。在iOS不支持此格式，但为桌面项目保持向后兼容性。
+    RGB 16 bit:65万颜色不带alpha。比PVRTC格式使用更多的内存，但更适用于UI或不带渐变的明快的纹理。128 KB 256x256
+    RGB 24 bit:真彩色不带alpha。（192 KB 256x256）
+    Alpha 8 bit:高质量alpha通道，不带颜色。（64 KB 256x256）
+    RGBA 16 bit:低质量真彩色。具有16级的红、绿、蓝和alpha。比PVRTC格式使用更多的内存，但如果需要精确的alpha通道，会更方便。（128 KB 256x256）
+    RGBA 32 bit:真彩色带alpha - 这是最高质量。256KB 256x256，这个是很消耗性能的。大多数情况下，PVRTC格式提供足够的质量，但有更小的文件大小。
+Android
+
+Texture Format:用于纹理的内部格式。在大小和质量之间权衡。在下列的例子中，我们使用了在游戏中纹理的最终大小为256x256像素。
+    RGB Compressed DXT1:压缩的RGB纹理。支持Nvidia Tegra。4位/像素（32 KB 256x256） ；
+    RGBA Compressed DXT5:压缩的RGBA纹理。支持Nvidia Tegra。6位/像素（64 KB 256x256） ；
+    RGB Compressed ETC 4 bits:压缩的RGB纹理。这是Android工程默认的纹理格式。ETC1是OpenGL ES 2.0标准的一部分，并且支持所有的OpenGL ES 2.0 GPU，但它不支持Alpha。4位/像素（32 KB 256x256）
+    RGB Compressed PVRTC 2 bits:压缩的RGB纹理。 支持Imagination PowerVR GPU。2位/像素（16 KB 256x256）
+    RGBA Compressed PVRTC 2 bits:压缩的RGBA纹理。支持Imagination PowerVR GPU。2位/像素（16 KB 256x256）
+    RGB Compressed PVRTC 4 bits:压缩的RGB纹理。 支持Imagination PowerVR GPU。4位/像素（32 KB 256x256）
+    RGBA Compressed PVRTC 4 bits:压缩的RGBA纹理。 支持Imagination PowerVR GPU。4位/像素（32 KB 256x256）
+    RGB Compressed ATC 4 bits:压缩的RGB纹理。 支持Qualcomm Snapdragon。4位/像素（32 KB 256x256）
+    RGBA Compressed ATC 8 bits:压缩的RGB纹理。 支持Qualcomm Snapdragon。6位/像素（64 KB 256x256）
+    RGB 16 bit:65万颜色不带alpha。比压缩的格式使用更多的内存，但更适用于UI或不带渐变的明快的纹理。128 KB 256x256
+    RGB 24 bit:真彩色不带alpha。（192 KB 256x256）
+    Alpha 8 bit:高质量alpha通道，不带颜色。（64 KB 256x256）
+    RGBA 16 bit:低质量真彩色。默认压缩的纹理带有alpha通道（128 KB 256x256）
+    RGBA 32 bit:真彩色带alpha - 这是高质量压缩的纹理带有alpha通道。（256 KB 256x256）
+       除非你是针对一个特定的硬件，像Tegra，我们建议你使用ETC1压缩。如果需要可以储存额外的alpha通道并仍能得到较低的纹理占用空间。如果你一定要储存alpha通道在纹理中，RGBA16位是所有的硬件​​厂商所支持的压缩。
+       如果你的应用程序采用一个不支持的纹理压缩，纹理将解压到RGBA32并连同压缩的那些储存在内存中。因此，这种情况下将失去解压纹理时间并消耗内存储存它们两次，也有可能非常影响渲染性能。
+       
+      [原文链接](https://gameinstitute.qq.com/community/detail/119104)
